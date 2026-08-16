@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+<!-- unified spine -->
+  <path
+    stroke="#3EE0C4"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    d="M64 22v84"
+  />
+  <!-- commit nodes -->
+  <circle cx="64" cy="28" r="7" fill="#0E1A24" stroke="#3EE0C4" stroke-width="3.5"/>
+  <circle cx="64" cy="64" r="7" fill="#0E1A24" stroke="#7C9CBF" stroke-width="3.5"/>
+  <circle cx="64" cy="100" r="7" fill="#0E1A24" stroke="#3EE0C4" stroke-width="3.5"/>
+  <!-- repo trays / lab plates -->
+  <rect x="28" y="38" width="72" height="16" rx="4" fill="#153042" stroke="#7C9CBF" stroke-width="2"/>
+  <rect x="22" y="56" width="84" height="16" rx="4" fill="#1B3B52" stroke="#3EE0C4" stroke-width="2"/>
+  <rect x="28" y="74" width="72" height="16" rx="4" fill="#153042" stroke="#7C9CBF" stroke-width="2"/>
+  <!-- left tabs -->
+  <rect x="22" y="42" width="8" height="8" rx="2" fill="#7C9CBF"/>
+  <rect x="16" y="60" width="8" height="8" rx="2" fill="#3EE0C4"/>
+  <rect x="22" y="78" width="8" height="8" rx="2" fill="#7C9CBF"/>
+</svg>

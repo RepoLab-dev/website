@@ -1,0 +1,7 @@
+= Changelog
+
+See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details: link:changelog-details/2026-08-15 - hello-world.adoc[hello-world].
+
+== 2026-08-15
+
+* Initial SolidStart product site for RepoLab: landing, providers placeholder, news, docs CTA, Netlify deploy workflow.
