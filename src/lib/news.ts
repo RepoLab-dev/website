@@ -15,7 +15,7 @@ export const newsPosts: NewsPost[] = [
     body: [
       "RepoLab is a wrapper layer over repository hosts and version-control engines, not a replacement for Git, Mercurial, Jujutsu, Pijul, SVN, or Perforce.",
       "The first public site is a landing and news channel at repolab.dev. Provider adapters and a working workspace are still placeholders.",
-      "RepoLabs is the organization. The GitHub slug is repolab-dev until a closer login becomes available. The intended org homepage is repolabs.com.",
+      "RepoLabs is the organization at github.com/RepoLab-dev. The org homepage is repolabs.dev; the product is at repolab.dev.",
     ],
   },
 ];

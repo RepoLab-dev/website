@@ -10,7 +10,7 @@
 
 </div>
 
-RepoLab is the browser frontend. RepoLabs (`repolab-dev` on GitHub, homepage [repolabs.com](https://repolabs.com)) is the lab around it.
+RepoLab is the browser frontend. RepoLabs (`RepoLab-dev` on GitHub, homepage [repolabs.dev](https://repolabs.dev)) is the lab around it.
 
 See [CHANGELOG](CHANGELOG.adoc) for what shipped.
 

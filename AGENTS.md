@@ -1,9 +1,8 @@
-# AGENTS.md — repolab-dev/website
+# AGENTS.md — RepoLab-dev/website
 
 ## Facts
-- Org: `repolab-dev` (display **RepoLabs**) · product: **RepoLab** · product domain `repolab.dev` · org homepage placeholder `repolabs.com`
+- Org: `RepoLab-dev` (display **RepoLabs**) · product: **RepoLab** · product domain `repolab.dev` · org homepage `repolabs.dev`
 - Site: SolidStart + solid-ui (Kobalte) · hosting: Netlify (personal team, CLI/Actions only — do **not** link the GitHub org repo in the Netlify UI)
-- Slug `repolab-dev` is a placeholder because `repolabs` is a GitHub user and `RepoLab` is an existing org
 - Related OSS in footer: DevCentr, OpenShellOrg, HCI Nerdz, linx.photos, InstaLay — not FoodTruckNerdz
 - Email placeholder: `hello@repolab.dev` (until Phase 8 mail is configured)
 
