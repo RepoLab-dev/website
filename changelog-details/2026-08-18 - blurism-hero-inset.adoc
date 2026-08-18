@@ -1,0 +1,7 @@
+= 2026-08-18 - Blurism hero inset
+
+The homepage Blurism wash is a rounded panel on the linen chrome, not a full-bleed strip.
+
+* Side gutters: `24px` (`mx-6`), `32px` from `sm`, `50px` from `lg`.
+* Corner radius: `rounded-3xl` (24px), clipped with `overflow-hidden`.
+* Sticky nav stays on the page chrome above the panel; a small `mt-3` / `mb-3` lets the radius read.

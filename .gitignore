@@ -10,6 +10,8 @@
 !AGENTS.md
 !public/
 !public/**
+!public/fonts/
+!public/fonts/**
 !src/
 !src/**
 !content/

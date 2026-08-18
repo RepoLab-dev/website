@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div class="max-w-xs">
           <div class="flex items-center gap-2.5">
             <LogoMark class="size-9" />
-            <span class="font-display text-sm font-semibold tracking-tight">{PRODUCT_NAME}</span>
+            <span class="text-sm font-semibold tracking-tight">{PRODUCT_NAME}</span>
           </div>
           <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">{t("footer_blurb")}</p>
           <p class="mt-2 text-sm">

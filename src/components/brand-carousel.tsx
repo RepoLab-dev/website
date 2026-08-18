@@ -1,8 +1,21 @@
 import { For, onCleanup, onMount } from "solid-js";
 import { BrandIcon } from "~/components/brand-icon";
 import { Button } from "~/components/ui/button";
-import type { Brand } from "~/lib/brands";
+import type { Brand, VcsType } from "~/lib/brands";
 import { useI18n } from "~/lib/i18n";
+
+const vcsLabelKey: Record<
+  VcsType,
+  "vcs_git" | "vcs_mercurial" | "vcs_jujutsu" | "vcs_pijul" | "vcs_subversion" | "vcs_perforce" | "vcs_fossil"
+> = {
+  git: "vcs_git",
+  mercurial: "vcs_mercurial",
+  jujutsu: "vcs_jujutsu",
+  pijul: "vcs_pijul",
+  subversion: "vcs_subversion",
+  perforce: "vcs_perforce",
+  fossil: "vcs_fossil",
+};
 
 export function BrandCarousel(props: {
   items: Brand[];
@@ -13,6 +26,7 @@ export function BrandCarousel(props: {
   const { t } = useI18n();
   let scroller: HTMLDivElement | undefined;
   let hovering = false;
+  const vcsList = (vcs: VcsType[]) => vcs.map((type) => t(vcsLabelKey[type])).join(", ");
 
   const scrollByCards = (dir: number) => {
     const el = scroller;
@@ -38,7 +52,7 @@ export function BrandCarousel(props: {
     <section class="mx-auto max-w-6xl space-y-4 px-4 sm:px-6" aria-label={props.label}>
       <div class="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 class="font-display text-2xl font-semibold">{props.label}</h2>
+          <h2 class="text-2xl font-semibold">{props.label}</h2>
           <p class="mt-1 max-w-xl text-sm text-muted-foreground">{props.lede}</p>
         </div>
         <div class="flex gap-2">
@@ -78,9 +92,9 @@ export function BrandCarousel(props: {
               <div class="flex size-12 items-center justify-center rounded-sm bg-muted/80">
                 <BrandIcon id={item.id} color={item.color} title={item.name} class="size-8" />
               </div>
-              <h3 class="font-display mt-3 text-base font-semibold">{item.name}</h3>
+              <h3 class="mt-3 text-base font-semibold">{item.name}</h3>
               <p class="mt-1 font-mono text-[11px] text-muted-foreground">
-                {t(item.kind === "git_host" ? "kind_git_host" : item.kind === "working_tree" ? "kind_working_tree" : "kind_non_git")}
+                {t("supported_vcs", { list: vcsList(item.vcs) })}
               </p>
             </article>
           )}

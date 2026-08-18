@@ -1,0 +1,7 @@
+= 2026-08-18 - Nabla hero title
+
+The homepage `h1` (“RepoLab”) is Typearture’s Nabla, a COLRv1 color font under SIL OFL 1.1. It is self-hosted (`public/fonts/nabla/`); Fraunces and Source Sans 3 stay on the rest of the chrome.
+
+* Size: `text-5xl` / `sm:text-7xl` / `lg:text-8xl` (was `text-4xl` / `sm:text-6xl`).
+* Light palette `--nabla-linen` and dark palette `--nabla-soil` remap the 3D slots (extrusion, face, highlight) to moss, terracotta, ochre, and linen. Edit `@font-palette-values` in `src/app.css`.
+* Browsers without COLRv1 fall back to Nabla’s outline glyphs plus Fraunces, colored with ochre.

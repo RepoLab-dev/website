@@ -1,0 +1,7 @@
+= 2026-08-18 - Theme-aware brand icons
+
+`BrandIcon` still paints Simple Icons as a CSS mask. Light theme keeps the existing brand hex; dark theme uses `colorDark` so marks stay visible on linen-moss chrome.
+
+* GitHub and SourceHut invert to white (official light-on-dark).
+* Bitbucket, Forgejo, Gitee, Azure Repos, Jujutsu, Pijul, and Perforce keep hue and lighten just enough for contrast.
+* The carnival mask stays `fill-primary` / loam tokens; the org tile logo already has its own dark ground.

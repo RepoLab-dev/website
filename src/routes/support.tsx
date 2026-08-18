@@ -10,7 +10,7 @@ export default function SupportPage() {
     <PageFrame>
       <article class="mx-auto max-w-3xl space-y-4">
         <Title>{t("title_page", { page: t("support_title"), site: SITE_NAME })}</Title>
-        <h1 class="font-display text-3xl font-semibold">{t("support_title")}</h1>
+        <h1 class="text-3xl font-semibold">{t("support_title")}</h1>
         <p>
           <EmailSentence
             text={t("support_p1", { email: SUPPORT_EMAIL, github: "GitHub" })}

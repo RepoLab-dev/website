@@ -1,9 +1,12 @@
 = Changelog
 
-See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details: link:changelog-details/2026-08-15 - hello-world.adoc[hello-world], link:changelog-details/2026-08-17 - earthy-hero-i18n.adoc[earthy-hero-i18n], link:changelog-details/2026-08-17 - mask-and-carousels.adoc[mask-and-carousels], link:changelog-details/2026-08-18 - hero-mask-caption.adoc[hero-mask-caption].
+See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details: link:changelog-details/2026-08-15 - hello-world.adoc[hello-world], link:changelog-details/2026-08-17 - earthy-hero-i18n.adoc[earthy-hero-i18n], link:changelog-details/2026-08-17 - mask-and-carousels.adoc[mask-and-carousels], link:changelog-details/2026-08-18 - hero-mask-caption.adoc[hero-mask-caption], link:changelog-details/2026-08-18 - theme-aware-brand-icons.adoc[theme-aware-brand-icons], link:changelog-details/2026-08-18 - blurism-hero-inset.adoc[blurism-hero-inset], link:changelog-details/2026-08-18 - nabla-hero-title.adoc[nabla-hero-title].
 
 == 2026-08-18
 
+* Homepage hero title uses Nabla (COLRv1, SIL OFL 1.1) with earthy light/dark palettes. Details: link:changelog-details/2026-08-18 - nabla-hero-title.adoc[nabla-hero-title].
+* Homepage Blurism wash is an inset rounded panel (~50px side gutters) instead of full-bleed. Details: link:changelog-details/2026-08-18 - blurism-hero-inset.adoc[blurism-hero-inset].
+* Brand marks that vanish on dark chrome (GitHub, SourceHut, and other dark fills) swap CSS-mask color in `.dark`. Details: link:changelog-details/2026-08-18 - theme-aware-brand-icons.adoc[theme-aware-brand-icons].
 * Hero figcaption is the mask metaphor only; Delapouite CC BY credit stays in the footer. Details: link:changelog-details/2026-08-18 - hero-mask-caption.adoc[hero-mask-caption].
 
 == 2026-08-17

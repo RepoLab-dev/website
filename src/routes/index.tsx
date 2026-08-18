@@ -21,12 +21,12 @@ export default function Home() {
   return (
     <div>
       <Title>{t("title_home", { site: SITE_NAME })}</Title>
-      <section class="relative isolate min-h-[min(88vh,52rem)] w-full overflow-hidden">
+      <section class="relative isolate mx-6 mt-3 mb-3 min-h-[min(88vh,52rem)] overflow-hidden rounded-3xl sm:mx-8 lg:mx-[50px]">
         <HeroBlurism />
         <div class="relative z-10 mx-auto grid min-h-[min(88vh,52rem)] max-w-6xl items-end gap-10 px-4 pb-14 pt-28 sm:px-6 sm:pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)]">
           <div>
             <p class="font-mono text-xs tracking-[0.18em] text-ochre uppercase">{t("hero_kicker")}</p>
-            <h1 class="font-display mt-3 max-w-2xl text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+            <h1 class="hero-title font-hero mt-3 max-w-3xl text-5xl leading-[1.15] sm:text-7xl lg:text-8xl">
               {t("hero_title")}
             </h1>
             <p class="mt-4 max-w-2xl text-lg font-medium text-foreground/90 sm:text-xl">{t("hero_lead")}</p>

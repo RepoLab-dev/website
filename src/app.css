@@ -5,9 +5,57 @@
   &:where(.dark, .dark *, [data-kb-theme="dark"], [data-kb-theme="dark"] *)
 );
 
+@font-face {
+  font-family: "Nabla";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/nabla/Nabla.woff2") format("woff2");
+}
+
+/*
+  Nabla CPAL slots (justvanrossum/nabla shear_and_extrude.py colorTable):
+  0 primer, 1 shadowBottom, 2 shadowMiddle, 3 shadow,
+  4 topBottom, 5 midTop, 6 frontBottom, 7 frontTop, 8 top, 9 highlight.
+  Hex matches :root / .dark tokens (hsl → hex); @font-palette-values cannot use var().
+  Tweak here, then font-palette: --nabla-linen | --nabla-soil.
+*/
+@font-palette-values --nabla-linen {
+  font-family: Nabla;
+  base-palette: 0;
+  override-colors:
+    0 #a47e3d,
+    1 #42362e,
+    2 #824f40,
+    3 #91523b,
+    4 #406450,
+    5 #5a7d68,
+    6 #a47e3d,
+    7 #d9ceb5,
+    8 #f6f3ef,
+    9 #faf8f5;
+}
+
+@font-palette-values --nabla-soil {
+  font-family: Nabla;
+  base-palette: 0;
+  override-colors:
+    0 #d4b37a,
+    1 #181411,
+    2 #342d27,
+    3 #4a3c34,
+    4 #2f5a42,
+    5 #5d9878,
+    6 #b69254,
+    7 #e8d5a8,
+    8 #f0e2c4,
+    9 #f7eed8;
+}
+
 @theme {
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", "Source Serif 4", ui-serif, Georgia, serif;
+  --font-hero: "Nabla", "Fraunces", "Source Serif 4", ui-serif, Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --color-background: hsl(var(--background));
@@ -107,14 +155,35 @@ a {
   @apply underline-offset-4;
 }
 
+/* Homepage hero h1 only. COLRv1 uses font-palette; glyf fallback uses color. */
+.hero-title {
+  font-palette: --nabla-linen;
+  font-variation-settings: "EDPT" 100, "EHLT" 12;
+  color: hsl(var(--ochre));
+}
+
+:is(.dark, [data-kb-theme="dark"]) .hero-title {
+  font-palette: --nabla-soil;
+}
+
+/* Fills the homepage hero panel (inset rounded rect, not full-bleed). */
 .hero-blurism {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.hero-blurism img,
-.hero-blurism svg {
+.hero-blurism-media {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: clamp(1100px, 130vw, 2100px);
+  transform: translateX(-50%);
+}
+
+.hero-blurism-media img,
+.hero-blurism-media svg {
   display: block;
   width: 100%;
   height: 100%;
@@ -133,6 +202,14 @@ a {
   background:
     linear-gradient(to top, hsl(var(--background) / 0.94) 0%, hsl(var(--background) / 0.55) 48%, hsl(var(--background) / 0.28) 100%),
     linear-gradient(120deg, hsl(var(--moss) / 0.16), transparent 42%, hsl(var(--ochre) / 0.1));
+}
+
+/* CSS-mask brand marks: light uses --brand-fill, dark uses --brand-fill-dark (GitHub/SourceHut invert). */
+.brand-icon {
+  background-color: var(--brand-fill, currentColor);
+}
+:is(.dark, [data-kb-theme="dark"]) .brand-icon {
+  background-color: var(--brand-fill-dark, var(--brand-fill, currentColor));
 }
 
 .mask-window {

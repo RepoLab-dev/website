@@ -18,7 +18,7 @@ export function StickyNav() {
   return (
     <header class="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-md">
       <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2 sm:px-6">
-        <A href="/" class="flex items-center gap-2 font-display text-sm font-semibold tracking-tight">
+        <A href="/" class="flex items-center gap-2 text-sm font-semibold tracking-tight">
           <LogoMark class="size-10" />
           {PRODUCT_NAME}
         </A>

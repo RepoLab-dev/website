@@ -19,9 +19,7 @@ const CardHeader: Component<ComponentProps<"div">> = (props) => {
 
 const CardTitle: Component<ComponentProps<"h3">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
-  return (
-    <h3 class={cn("font-display text-lg font-semibold leading-none tracking-tight", local.class)} {...others} />
-  );
+  return <h3 class={cn("text-lg font-semibold leading-none tracking-tight", local.class)} {...others} />;
 };
 
 const CardDescription: Component<ComponentProps<"p">> = (props) => {

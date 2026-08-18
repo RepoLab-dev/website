@@ -12,14 +12,14 @@ export default function NewsIndex() {
     <PageFrame>
       <div class="space-y-6">
         <Title>{t("title_page", { page: t("news_title"), site: SITE_NAME })}</Title>
-        <h1 class="font-display text-3xl font-semibold">{t("news_title")}</h1>
+        <h1 class="text-3xl font-semibold">{t("news_title")}</h1>
         <p class="text-sm text-muted-foreground">{t("news_lede")}</p>
         <ul class="space-y-4">
           <For each={newsPosts}>
             {(post) => (
               <li class="border-b border-border/60 pb-4">
                 <p class="font-mono text-xs text-muted-foreground">{post.date}</p>
-                <A href={`/news/${post.slug}`} class="font-display text-xl font-semibold hover:underline">
+                <A href={`/news/${post.slug}`} class="text-xl font-semibold hover:underline">
                   {post.title}
                 </A>
                 <p class="mt-1 text-sm text-muted-foreground">{post.dek}</p>

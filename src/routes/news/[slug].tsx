@@ -29,7 +29,7 @@ export default function NewsArticle() {
               {p().title} · {SITE_NAME}
             </Title>
             <p class="font-mono text-xs text-muted-foreground">{p().date}</p>
-            <h1 class="font-display text-3xl font-semibold">{p().title}</h1>
+            <h1 class="text-3xl font-semibold">{p().title}</h1>
             <p class="text-lg text-foreground/90">{p().dek}</p>
             <For each={p().body}>{(para) => <p class="text-muted-foreground">{para}</p>}</For>
             <p>

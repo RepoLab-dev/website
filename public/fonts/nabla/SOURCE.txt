@@ -1,0 +1,10 @@
+Nabla COLRv1 variable font (EDPT extrusion, EHLT highlight)
+
+- Design: Arthur Reinders Folmer / Typearture
+- Engineering: Just van Rossum
+- License: SIL Open Font License 1.1 (see OFL.txt)
+- Catalog: https://github.com/google/fonts/tree/main/ofl/nabla (Version 1.003)
+- Upstream: https://github.com/justvanrossum/nabla
+- Specimen: https://fonts.google.com/specimen/Nabla · https://nabla.typearture.com/
+
+Self-hosted woff2 is COLRv1 + CPAL (not a bitmap color font). SVG-in-OT was dropped so CSS font-palette applies. Palettes: src/app.css `--nabla-linen` / `--nabla-soil`.

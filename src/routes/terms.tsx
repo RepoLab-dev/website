@@ -10,7 +10,7 @@ export default function TermsPage() {
     <PageFrame>
       <article class="mx-auto max-w-3xl space-y-4">
         <Title>{t("title_page", { page: t("terms_title"), site: SITE_NAME })}</Title>
-        <h1 class="font-display text-3xl font-semibold">{t("terms_title")}</h1>
+        <h1 class="text-3xl font-semibold">{t("terms_title")}</h1>
         <p>{t("terms_p1")}</p>
         <p>
           <EmailSentence text={t("terms_p2", { email: SUPPORT_EMAIL })} email={SUPPORT_EMAIL} />

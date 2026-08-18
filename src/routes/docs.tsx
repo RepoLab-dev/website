@@ -9,7 +9,7 @@ export default function DocsStub() {
     <PageFrame>
       <div class="space-y-4">
         <Title>{t("title_page", { page: t("docs_title"), site: SITE_NAME })}</Title>
-        <h1 class="font-display text-3xl font-semibold">{t("docs_title")}</h1>
+        <h1 class="text-3xl font-semibold">{t("docs_title")}</h1>
         <p class="text-muted-foreground">{t("docs_lede")}</p>
         <p>
           <a class="text-primary underline" href={DOCS_URL}>
