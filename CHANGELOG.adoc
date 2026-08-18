@@ -1,9 +1,11 @@
 = Changelog
 
-See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details: link:changelog-details/2026-08-15 - hello-world.adoc[hello-world].
+See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details: link:changelog-details/2026-08-15 - hello-world.adoc[hello-world], link:changelog-details/2026-08-17 - earthy-hero-i18n.adoc[earthy-hero-i18n], link:changelog-details/2026-08-17 - mask-and-carousels.adoc[mask-and-carousels].
 
 == 2026-08-17
 
+* Carnival-mask mark (a face over other forges) plus host and VCS carousels on the homepage. Details: link:changelog-details/2026-08-17 - mask-and-carousels.adoc[mask-and-carousels].
+* Earthy linen/moss/terracotta palette with a full-bleed Blurism hero and en/es/fr chrome. Details: link:changelog-details/2026-08-17 - earthy-hero-i18n.adoc[earthy-hero-i18n].
 * Org homepage is `repolabs.dev` (not `.com`). GitHub org login is `RepoLab-dev`.
 
 == 2026-08-15

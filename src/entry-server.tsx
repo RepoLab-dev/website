@@ -1,7 +1,7 @@
 // @refresh reload
 import { createHandler, StartServer } from "@solidjs/start/server";
 
-const themeBoot = `(function(){try{var k='repolab-theme';var s=localStorage.getItem(k);var d=s==='dark'||(s!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var r=document.documentElement;if(d){r.classList.add('dark');r.dataset.kbTheme='dark';r.style.colorScheme='dark';}else{r.dataset.kbTheme='light';r.style.colorScheme='light';}}catch(e){}})();`;
+const themeBoot = `(function(){try{var k='repolab-theme';var s=localStorage.getItem(k);var d=s==='dark'||(s!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var r=document.documentElement;if(d){r.classList.add('dark');r.dataset.kbTheme='dark';r.style.colorScheme='dark';}else{r.dataset.kbTheme='light';r.style.colorScheme='light';}var l=localStorage.getItem('repolab-locale');if(l==='es'||l==='fr'||l==='en')r.lang=l;}catch(e){}})();`;
 
 export default createHandler(() => (
   <StartServer

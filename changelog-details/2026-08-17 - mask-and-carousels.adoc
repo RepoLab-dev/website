@@ -1,0 +1,7 @@
+= Mask mark and tool carousels
+
+RepoLab’s mark is now a Venetian carnival mask: the product is a face over other forges and engines.
+
+* Nav, footer, and favicon use the mask silhouette (Delapouite / game-icons.net, CC BY 3.0).
+* Homepage hero cuts the mask out of a drifting field of host and VCS marks.
+* Two snap carousels list git hosts and version-control engines, with icons on the providers page too.

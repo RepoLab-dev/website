@@ -1,79 +1,78 @@
 import { A } from "@solidjs/router";
 import { Title } from "@solidjs/meta";
 import { For } from "solid-js";
+import { BrandCarousel } from "~/components/brand-carousel";
+import { HeroBlurism } from "~/components/hero-blurism";
+import { MaskWindow } from "~/components/mask-window";
+import { PageFrame } from "~/components/page-frame";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { DOCS_URL, PRODUCT_NAME, SITE_NAME } from "~/lib/utils";
-
-const layers = [
-  {
-    title: "Git hosts",
-    body: "GitHub first, then other git hosting APIs behind the same review and browse surfaces.",
-  },
-  {
-    title: "Local and remote repos",
-    body: "Open a working tree or a hosted repository without switching products for each vendor.",
-  },
-  {
-    title: "Non-git VCS",
-    body: "Adapters for Mercurial, Jujutsu, Pijul, SVN, and Perforce — protocol stays underneath.",
-  },
-];
+import { gitHosts, vcsEngines } from "~/lib/brands";
+import { useI18n } from "~/lib/i18n";
+import { DOCS_URL, SITE_NAME } from "~/lib/utils";
 
 export default function Home() {
+  const { t } = useI18n();
+  const layers = () => [
+    { title: t("layer_hosts_title"), body: t("layer_hosts_body") },
+    { title: t("layer_repos_title"), body: t("layer_repos_body") },
+    { title: t("layer_vcs_title"), body: t("layer_vcs_body") },
+  ];
   return (
-    <div class="space-y-10">
-      <Title>
-        {SITE_NAME} · one UI for version control
-      </Title>
-      <section class="relative overflow-hidden border border-border/60 bg-card/50 px-5 py-10 sm:px-9 sm:py-12">
-        <div
-          class="pointer-events-none absolute inset-0 opacity-50"
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(168 55% 28% / 0.18), transparent 45%), linear-gradient(225deg, hsl(195 70% 38% / 0.14), transparent 40%)",
-          }}
-        />
-        <div class="relative max-w-2xl">
-          <p class="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">RepoLabs product</p>
-          <h1 class="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {PRODUCT_NAME}
-          </h1>
-          <p class="mt-3 text-lg font-medium text-foreground/90">
-            One frontend for GitHub, other git providers, and non-git VCS systems.
-          </p>
-          <p class="mt-2 text-sm text-muted-foreground sm:text-base">
-            A wrapper and cockpit, not a new version-control engine. Adapters are placeholders until each
-            provider ships.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2.5">
-            <A href="/providers">
-              <Button size="lg">Browse providers</Button>
-            </A>
-            <a href={DOCS_URL}>
-              <Button size="lg" variant="outline">
-                Explore the docs »
-              </Button>
-            </a>
+    <div>
+      <Title>{t("title_home", { site: SITE_NAME })}</Title>
+      <section class="relative isolate min-h-[min(88vh,52rem)] w-full overflow-hidden">
+        <HeroBlurism />
+        <div class="relative z-10 mx-auto grid min-h-[min(88vh,52rem)] max-w-6xl items-end gap-10 px-4 pb-14 pt-28 sm:px-6 sm:pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)]">
+          <div>
+            <p class="font-mono text-xs tracking-[0.18em] text-ochre uppercase">{t("hero_kicker")}</p>
+            <h1 class="font-display mt-3 max-w-2xl text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+              {t("hero_title")}
+            </h1>
+            <p class="mt-4 max-w-2xl text-lg font-medium text-foreground/90 sm:text-xl">{t("hero_lead")}</p>
+            <p class="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">{t("hero_sub")}</p>
+            <div class="mt-8 flex flex-wrap gap-2.5">
+              <A href="/providers">
+                <Button size="lg">{t("cta_providers")}</Button>
+              </A>
+              <a href={DOCS_URL}>
+                <Button size="lg" variant="outline">
+                  {t("cta_docs")}
+                </Button>
+              </a>
+            </div>
           </div>
+          <MaskWindow />
         </div>
       </section>
 
-      <section class="grid gap-4 md:grid-cols-3">
-        <For each={layers}>
-          {(layer) => (
-            <Card>
-              <CardHeader>
-                <CardTitle>{layer.title}</CardTitle>
-                <CardDescription>{layer.body}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p class="font-mono text-xs text-muted-foreground">Adapter status: placeholder</p>
-              </CardContent>
-            </Card>
-          )}
-        </For>
-      </section>
+      <div class="space-y-8 py-8">
+        <BrandCarousel items={gitHosts} label={t("carousel_hosts_title")} lede={t("carousel_hosts_lede")} />
+        <BrandCarousel
+          items={vcsEngines}
+          label={t("carousel_vcs_title")}
+          lede={t("carousel_vcs_lede")}
+          reverse
+        />
+      </div>
+
+      <PageFrame>
+        <section class="grid gap-4 md:grid-cols-3">
+          <For each={layers()}>
+            {(layer) => (
+              <Card>
+                <CardHeader>
+                  <CardTitle>{layer.title}</CardTitle>
+                  <CardDescription>{layer.body}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p class="font-mono text-xs text-muted-foreground">{t("adapter_placeholder")}</p>
+                </CardContent>
+              </Card>
+            )}
+          </For>
+        </section>
+      </PageFrame>
     </div>
   );
 }

@@ -20,6 +20,7 @@ export const newsPosts: NewsPost[] = [
   },
 ];
 
-export function newsBySlug(slug: string) {
+export function newsBySlug(slug: string | undefined) {
+  if (!slug) return undefined;
   return newsPosts.find((p) => p.slug === slug);
 }

@@ -1,0 +1,3 @@
+= 2026-08-17 - Earthy hero and i18n
+
+Calm earth chrome (linen, moss, terracotta, ochre) with a generated Blurism wash on the homepage. Swap `public/hero-blurism.svg` for a custom export. Product chrome is localized to English, Spanish, and French; news bodies stay the English outward record.

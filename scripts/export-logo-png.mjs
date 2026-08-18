@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 const SIZE = 128;
 const TILE_RX = 28;
-const TILE_FILL = "#0E1A24";
+const TILE_FILL = "#2C2118";
 const FAVICON_INSET = 6;
 const TILE_BG = /[ \t]*<rect width="128" height="128" rx="28"[^>]*\/?>\r?\n?/;
 
