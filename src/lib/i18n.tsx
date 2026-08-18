@@ -35,7 +35,7 @@ const dict = {
     layer_vcs_body:
       "Adapters for Mercurial, Jujutsu, Pijul, SVN, and Perforce — protocol stays underneath.",
     adapter_placeholder: "Adapter status: placeholder",
-    mask_caption: "RepoLab is a mask over the forges and engines underneath.",
+    mask_caption: "RepoLab is a mask over other code forges and their feature sets",
     carousel_hosts_title: "Git hosts",
     carousel_hosts_lede: "One review surface. Many hosting APIs.",
     carousel_vcs_title: "Version-control engines",
@@ -106,7 +106,7 @@ const dict = {
     layer_vcs_body:
       "Adaptadores para Mercurial, Jujutsu, Pijul, SVN y Perforce — el protocolo queda debajo.",
     adapter_placeholder: "Estado del adaptador: marcador de posición",
-    mask_caption: "RepoLab es una máscara sobre las forjas y los motores que hay debajo.",
+    mask_caption: "RepoLab es una máscara sobre otras forjas de código y sus conjuntos de funciones.",
     carousel_hosts_title: "Anfitriones git",
     carousel_hosts_lede: "Una misma superficie de revisión. Muchas APIs de hospedaje.",
     carousel_vcs_title: "Motores de control de versiones",
@@ -178,7 +178,7 @@ const dict = {
     layer_vcs_body:
       "Adaptateurs pour Mercurial, Jujutsu, Pijul, SVN et Perforce — le protocole reste en dessous.",
     adapter_placeholder: "Statut de l’adaptateur : placeholder",
-    mask_caption: "RepoLab est un masque posé sur les forges et les moteurs en dessous.",
+    mask_caption: "RepoLab est un masque posé sur d’autres forges de code et leurs fonctionnalités.",
     carousel_hosts_title: "Hôtes git",
     carousel_hosts_lede: "Une même surface de relecture. Plusieurs API d’hébergement.",
     carousel_vcs_title: "Moteurs de gestion de versions",

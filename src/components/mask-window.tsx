@@ -16,8 +16,7 @@ export function MaskWindow() {
         </div>
       </div>
       <figcaption class="mt-3 text-center text-sm text-muted-foreground lg:text-left">
-        {t("mask_caption")}{" "}
-        <span class="text-xs opacity-80">{t("mask_credit")}</span>
+        {t("mask_caption")}
       </figcaption>
     </figure>
   );

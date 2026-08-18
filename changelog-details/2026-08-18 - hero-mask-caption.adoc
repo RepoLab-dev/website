@@ -1,0 +1,6 @@
+= Hero mask caption and footer credit
+
+The homepage hero figcaption is the product metaphor only. CC BY 3.0 credit for the Delapouite / game-icons.net carnival mask stays in the site footer, not on the mark.
+
+* Caption: "RepoLab is a mask over other code forges and their feature sets" (en, es, and fr).
+* Duplicate license line removed from the hero so attribution is not cluttered on the mask.
