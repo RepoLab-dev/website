@@ -1,0 +1,5 @@
+﻿= 2026-09-10 — Crawlability
+
+* `/robots.txt` and `/sitemap.xml` SolidStart route handlers return real text/XML (not SPA HTML).
+* Sitemap routes come from public pages plus the news catalog.
+* Netlify content-type headers for those paths.
