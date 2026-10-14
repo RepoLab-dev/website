@@ -6,56 +6,17 @@
 );
 
 @font-face {
-  font-family: "Nabla";
+  font-family: "ZT Nature";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-display: swap;
-  src: url("/fonts/nabla/Nabla.woff2") format("woff2");
-}
-
-/*
-  Nabla CPAL slots (justvanrossum/nabla shear_and_extrude.py colorTable):
-  0 primer, 1 shadowBottom, 2 shadowMiddle, 3 shadow,
-  4 topBottom, 5 midTop, 6 frontBottom, 7 frontTop, 8 top, 9 highlight.
-  Hex matches :root / .dark tokens (hsl → hex); @font-palette-values cannot use var().
-  Tweak here, then font-palette: --nabla-linen | --nabla-soil.
-*/
-@font-palette-values --nabla-linen {
-  font-family: Nabla;
-  base-palette: 0;
-  override-colors:
-    0 #a47e3d,
-    1 #42362e,
-    2 #824f40,
-    3 #91523b,
-    4 #406450,
-    5 #5a7d68,
-    6 #a47e3d,
-    7 #d9ceb5,
-    8 #f6f3ef,
-    9 #faf8f5;
-}
-
-@font-palette-values --nabla-soil {
-  font-family: Nabla;
-  base-palette: 0;
-  override-colors:
-    0 #d4b37a,
-    1 #181411,
-    2 #342d27,
-    3 #4a3c34,
-    4 #2f5a42,
-    5 #5d9878,
-    6 #b69254,
-    7 #e8d5a8,
-    8 #f0e2c4,
-    9 #f7eed8;
+  src: url("/fonts/zt-nature/ZTNature-Medium.woff2") format("woff2");
 }
 
 @theme {
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", "Source Serif 4", ui-serif, Georgia, serif;
-  --font-hero: "Nabla", "Fraunces", "Source Serif 4", ui-serif, Georgia, serif;
+  --font-hero: "ZT Nature", "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --color-background: hsl(var(--background));
@@ -155,15 +116,10 @@ a {
   @apply underline-offset-4;
 }
 
-/* Homepage hero h1 only. COLRv1 uses font-palette; glyf fallback uses color. */
+/* Homepage hero h1 only. */
 .hero-title {
-  font-palette: --nabla-linen;
-  font-variation-settings: "EDPT" 100, "EHLT" 12;
+  font-weight: 500;
   color: hsl(var(--ochre));
-}
-
-:is(.dark, [data-kb-theme="dark"]) .hero-title {
-  font-palette: --nabla-soil;
 }
 
 /* Fills the homepage hero panel (inset rounded rect, not full-bleed). */

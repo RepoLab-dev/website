@@ -1,0 +1,10 @@
+ZT Nature Medium (static, weight 500)
+
+- Design: Khairunnas / Zelowtype
+- License: free for all licenses (personal and commercial), per the foundry's release
+  https://zelowtype.gumroad.com/p/new-release-zt-nature-free-for-all-licenses-variable
+  DaFont lists it as "100% Free": https://www.dafont.com/zt-nature.font
+- Specimen: https://zelowtype.com/zt-nature/
+- Source file: ZTNature-Medium.ttf (Version 1.000) from the DaFont package, converted to woff2 with fontTools.
+
+The embedded name-table license text is the foundry's generic template; the release page above is the authoritative grant.

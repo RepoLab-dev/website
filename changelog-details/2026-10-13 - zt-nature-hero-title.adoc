@@ -1,0 +1,7 @@
+= 2026-10-13 - ZT Nature hero title
+
+The homepage `h1` ("RepoLab") uses ZT Nature Medium (Zelowtype, free for all licenses) instead of Nabla. It is self-hosted at `public/fonts/zt-nature/ZTNature-Medium.woff2` and preloaded from the document head.
+
+* The title keeps the ochre color in both themes. Nabla's color palettes (`--nabla-linen` / `--nabla-soil`) and extrusion axes are gone, since ZT Nature is a plain outline font.
+* Fallback is Source Sans 3, then the system sans.
+* Nabla font files and their OFL notice are removed.

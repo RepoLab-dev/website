@@ -14,6 +14,7 @@ export default createHandler(() => (
           <script>{themeBoot}</script>
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           <link rel="apple-touch-icon" href="/logo-256.png" />
+          <link rel="preload" as="font" type="font/woff2" href="/fonts/zt-nature/ZTNature-Medium.woff2" crossorigin="anonymous" />
           {assets}
         </head>
         <body>

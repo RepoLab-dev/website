@@ -4,6 +4,7 @@ See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details:
 
 == 2026-10-13
 
+* Homepage hero title uses ZT Nature Medium instead of Nabla. Details: link:changelog-details/2026-10-13 - zt-nature-hero-title.adoc[zt-nature-hero-title].
 * The product site answers only on `repolab.dev` and `www.repolab.dev`; the second org domain is no longer served. Details: link:changelog-details/2026-10-13 - single-domain.adoc[single-domain].
 
 == 2026-08-18
