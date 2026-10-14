@@ -1,3 +1,0 @@
-= 2026-10-13 - repolabs.dev dropped
-
-`repolabs.dev` and `www.repolabs.dev` were Netlify aliases on the product site, so they served a full copy of `repolab.dev`. A short-lived 301 redirect to `https://repolab.dev` was replaced the same day by removing both hosts from the Netlify site and from `netlify.toml`. The product site answers only on `repolab.dev` and `www.repolab.dev`.

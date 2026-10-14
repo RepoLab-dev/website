@@ -1,0 +1,3 @@
+= 2026-10-13 - Single domain
+
+The product site used to answer on a second org domain as well, serving a full copy of `repolab.dev`. That domain is removed from the Netlify site, `netlify.toml`, and the docs. The site answers only on `repolab.dev` and `www.repolab.dev`, and the footer's RepoLabs link goes to the GitHub org at `github.com/RepoLab-dev`.
