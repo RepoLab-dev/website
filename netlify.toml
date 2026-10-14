@@ -12,6 +12,30 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://repolabs.dev/*"
+  to = "https://repolab.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.repolabs.dev/*"
+  to = "https://repolab.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://repolabs.dev/*"
+  to = "https://repolab.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.repolabs.dev/*"
+  to = "https://repolab.dev/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -1,0 +1,3 @@
+= 2026-10-13 - repolabs.dev redirect
+
+`repolabs.dev` and `www.repolabs.dev` were Netlify aliases on the product site, so they served a full copy of `repolab.dev`. Netlify now answers both hosts, over HTTP and HTTPS, with a 301 to `https://repolab.dev` and keeps the request path.
