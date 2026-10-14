@@ -4,7 +4,7 @@ See also link:CHANGELOG.adoc[the changelog index] in each sibling repo. Details:
 
 == 2026-10-13
 
-* `repolabs.dev` and `www.repolabs.dev` redirect (301) to `https://repolab.dev` instead of serving a duplicate site. Details: link:changelog-details/2026-10-13 - repolabs-redirect.adoc[repolabs-redirect].
+* `repolabs.dev` is no longer served by the product site; only `repolab.dev` and `www.repolab.dev` remain. Details: link:changelog-details/2026-10-13 - repolabs-redirect.adoc[repolabs-redirect].
 
 == 2026-08-18
 
