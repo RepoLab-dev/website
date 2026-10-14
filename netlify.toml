@@ -11,6 +11,7 @@
   to = "https://repolab.dev/:splat"
   status = 301
   force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
