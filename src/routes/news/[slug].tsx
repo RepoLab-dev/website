@@ -17,23 +17,23 @@ export default function NewsArticle() {
         fallback={
           <p>
             {t("news_missing")}{" "}
-            <A href="/news" class="text-primary underline">
+            <A href="/news" class="text-link">
               {t("news_back")}
             </A>
           </p>
         }
       >
         {(p) => (
-          <article class="mx-auto max-w-3xl space-y-4">
+          <article class="prose-page">
             <Title>
               {p().title} · {SITE_NAME}
             </Title>
-            <p class="font-mono text-xs text-muted-foreground">{p().date}</p>
-            <h1 class="text-3xl font-semibold">{p().title}</h1>
-            <p class="text-lg text-foreground/90">{p().dek}</p>
+            <time datetime={p().date} class="block text-sm text-muted-foreground tabular-nums">{p().date}</time>
+            <h1 class="t-h1">{p().title}</h1>
+            <p class="t-lead !max-w-none">{p().dek}</p>
             <For each={p().body}>{(para) => <p class="text-muted-foreground">{para}</p>}</For>
             <p>
-              <A href="/news" class="text-primary underline">
+              <A href="/news" class="text-link">
                 {t("news_back")}
               </A>
             </p>

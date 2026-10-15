@@ -1,0 +1,14 @@
+= Masquerade redesign
+:revdate: 2026-10-15
+
+The product site was redesigned from scratch around its existing mask mark.
+
+== What changed
+
+* *Hero.* The homepage opens on a dark stage with a large gilt carnival mask. A forge's mark shows through the eye holes, and a row of buttons lets visitors choose which host or engine sits behind the mask. On first load the mask cycles through a few forges once, then stops; reduced-motion visitors see a still mask.
+* *Cast list.* The git host and version-control engine carousels became a two-column cast list with dotted leaders to each entry's supported VCS. The Providers page uses the same list and shows each adapter's status.
+* *Layers.* The three adapter layers (git hosts, local and remote repos, other VCS backends) are stacked, offset plates instead of identical cards.
+* *Type.* Gloock (display) and Schibsted Grotesk (text), both self-hosted via Fontsource and preloaded. The Google Fonts import, Fraunces, Source Sans 3, IBM Plex Mono and the ZT Nature hero title are no longer loaded.
+* *Color.* Light theme is lilac paper with aubergine ink; dark theme lowers the house lights. Gilt marks the brand, rose marks actions, verdigris marks adapter status.
+* *Chrome.* Nav and footer sit on the stage color in both themes. The language switcher moves to the footer on small screens.
+* The Blurism hero wash (`public/hero-blurism.svg`) and the carousel component were removed.

@@ -10,33 +10,30 @@ export function StickyNav() {
   const location = useLocation();
   const { t } = useI18n();
   const items = () => [
-    { href: "/", label: t("nav_home") },
     { href: "/providers", label: t("nav_providers") },
     { href: "/news", label: t("nav_news") },
     { href: "/docs", label: t("nav_docs") },
   ];
   return (
-    <header class="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-md">
-      <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2 sm:px-6">
-        <A href="/" class="flex items-center gap-2 text-sm font-semibold tracking-tight">
-          <LogoMark class="size-10" />
-          {PRODUCT_NAME}
+    <header class="sticky top-0 z-40 border-b border-[hsl(var(--stage-ink)/0.1)] bg-[hsl(var(--stage)/0.92)] text-[hsl(var(--stage-ink))] backdrop-blur-md">
+      <div class="mx-auto flex max-w-7xl items-center gap-2 px-5 py-2.5 sm:gap-4 sm:px-8">
+        <A href="/" class="flex items-center gap-2.5 font-display text-2xl no-underline" aria-label={t("nav_home")}>
+          <LogoMark class="size-9 [&_path]:fill-[hsl(var(--gilt))]" />
+          <span class="hidden sm:inline">{PRODUCT_NAME}</span>
         </A>
-        <nav class="ml-2 flex flex-1 gap-1 overflow-x-auto" aria-label={t("nav_aria")}>
+        <nav class="ml-auto flex gap-1 overflow-x-auto sm:ml-6 sm:mr-auto" aria-label={t("nav_aria")}>
           <For each={items()}>
             {(item) => {
-              const active =
-                item.href === "/"
-                  ? location.pathname === "/"
-                  : location.pathname.startsWith(item.href);
+              const active = () => location.pathname.startsWith(item.href);
               return (
                 <A
                   href={item.href}
+                  aria-current={active() ? "page" : undefined}
                   class={cn(
-                    "rounded-sm px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors",
-                    active
-                      ? "bg-primary/15 text-primary"
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                    "rounded-full px-3 py-1.5 text-[0.9375rem] whitespace-nowrap no-underline transition-colors",
+                    active()
+                      ? "bg-[hsl(var(--gilt))] text-[hsl(var(--stage))]"
+                      : "text-[hsl(var(--stage-ink)/0.75)] hover:text-[hsl(var(--stage-ink))]",
                   )}
                 >
                   {item.label}

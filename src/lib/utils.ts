@@ -14,5 +14,3 @@ export const ORG_HOME = "https://github.com/RepoLab-dev";
 export const DOCS_URL = "https://docs.repolab.dev";
 export const GITHUB_ORG = "https://github.com/RepoLab-dev";
 export const SUPPORT_EMAIL = "hello@repolab.dev";
-/** Drop a custom Blurism PNG/SVG here (or change this path) to replace the generated wash. */
-export const HERO_BLURISM_SRC = "/hero-blurism.svg";

@@ -9,20 +9,20 @@ import { SITE_NAME } from "~/lib/utils";
 export default function NewsIndex() {
   const { t } = useI18n();
   return (
-    <PageFrame>
-      <div class="space-y-6">
+    <PageFrame title={t("news_title")} lede={t("news_lede")}>
+      <div>
         <Title>{t("title_page", { page: t("news_title"), site: SITE_NAME })}</Title>
-        <h1 class="text-3xl font-semibold">{t("news_title")}</h1>
-        <p class="text-sm text-muted-foreground">{t("news_lede")}</p>
-        <ul class="space-y-4">
+        <ul class="max-w-3xl">
           <For each={newsPosts}>
             {(post) => (
-              <li class="border-b border-border/60 pb-4">
-                <p class="font-mono text-xs text-muted-foreground">{post.date}</p>
-                <A href={`/news/${post.slug}`} class="text-xl font-semibold hover:underline">
+              <li class="grid gap-2 border-b border-border py-7 first:pt-0 sm:grid-cols-[9rem_1fr] sm:gap-8">
+                <time datetime={post.date} class="pt-1.5 text-sm text-muted-foreground tabular-nums">{post.date}</time>
+                <div>
+                <A href={`/news/${post.slug}`} class="t-h3 decoration-[hsl(var(--rose))] decoration-2 hover:underline">
                   {post.title}
                 </A>
-                <p class="mt-1 text-sm text-muted-foreground">{post.dek}</p>
+                <p class="mt-2 text-muted-foreground">{post.dek}</p>
+                </div>
               </li>
             )}
           </For>

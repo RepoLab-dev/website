@@ -1,15 +1,50 @@
 import { A } from "@solidjs/router";
 import { Title } from "@solidjs/meta";
 import { For } from "solid-js";
-import { BrandCarousel } from "~/components/brand-carousel";
-import { HeroBlurism } from "~/components/hero-blurism";
+import { BrandIcon } from "~/components/brand-icon";
 import { MaskWindow } from "~/components/mask-window";
-import { PageFrame } from "~/components/page-frame";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { gitHosts, vcsEngines } from "~/lib/brands";
-import { useI18n } from "~/lib/i18n";
+import { gitHosts, vcsEngines, type Brand, type VcsType } from "~/lib/brands";
+import { useI18n, type DictKey } from "~/lib/i18n";
 import { DOCS_URL, SITE_NAME } from "~/lib/utils";
+
+const vcsLabelKey: Record<VcsType, DictKey> = {
+  git: "vcs_git",
+  mercurial: "vcs_mercurial",
+  jujutsu: "vcs_jujutsu",
+  pijul: "vcs_pijul",
+  subversion: "vcs_subversion",
+  perforce: "vcs_perforce",
+  fossil: "vcs_fossil",
+};
+
+function CastList(props: { title: string; lede: string; items: Brand[] }) {
+  const { t } = useI18n();
+  const vcsList = (vcs: VcsType[]) => vcs.map((type) => t(vcsLabelKey[type])).join(", ");
+  return (
+    <section class="mt-16 first:mt-0" aria-labelledby={`cast-${props.items[0].kind}`}>
+      <div class="mb-6 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+        <h3 id={`cast-${props.items[0].kind}`} class="t-h2">
+          {props.title}
+        </h3>
+        <p class="max-w-md text-muted-foreground">{props.lede}</p>
+      </div>
+      <ul class="playbill">
+        <For each={props.items}>
+          {(b) => (
+            <li class="playbill-row">
+              <span class="playbill-name">
+                <BrandIcon id={b.id} color={b.color} colorDark={b.colorDark} />
+                {b.name}
+              </span>
+              <span class="playbill-leader" aria-hidden="true" />
+              <span class="playbill-role">{t("supported_vcs", { list: vcsList(b.vcs) })}</span>
+            </li>
+          )}
+        </For>
+      </ul>
+    </section>
+  );
+}
 
 export default function Home() {
   const { t } = useI18n();
@@ -21,24 +56,19 @@ export default function Home() {
   return (
     <div>
       <Title>{t("title_home", { site: SITE_NAME })}</Title>
-      <section class="relative isolate mx-6 mt-3 mb-3 min-h-[min(88vh,52rem)] overflow-hidden rounded-3xl sm:mx-8 lg:mx-[50px]">
-        <HeroBlurism />
-        <div class="relative z-10 mx-auto grid min-h-[min(88vh,52rem)] max-w-6xl items-end gap-10 px-4 pb-14 pt-28 sm:px-6 sm:pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)]">
+
+      <section class="stage">
+        <div class="stage-grid mx-auto max-w-7xl px-5 sm:px-8">
           <div>
-            <p class="font-mono text-xs tracking-[0.18em] text-ochre uppercase">{t("hero_kicker")}</p>
-            <h1 class="hero-title font-hero mt-3 max-w-3xl text-5xl leading-[1.15] sm:text-7xl lg:text-8xl">
-              {t("hero_title")}
-            </h1>
-            <p class="mt-4 max-w-2xl text-lg font-medium text-foreground/90 sm:text-xl">{t("hero_lead")}</p>
-            <p class="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">{t("hero_sub")}</p>
-            <div class="mt-8 flex flex-wrap gap-2.5">
-              <A href="/providers">
-                <Button size="lg">{t("cta_providers")}</Button>
+            <h1 class="t-display stage-title">{t("hero_title")}</h1>
+            <p class="t-lead mt-6 font-medium">{t("hero_lead")}</p>
+            <p class="mt-4 max-w-[46ch] text-[hsl(var(--stage-ink)/0.72)]">{t("hero_sub")}</p>
+            <div class="mt-9 flex flex-wrap gap-3">
+              <A href="/providers" class="btn btn-rose">
+                {t("cta_providers")}
               </A>
-              <a href={DOCS_URL}>
-                <Button size="lg" variant="outline">
-                  {t("cta_docs")}
-                </Button>
+              <a href={DOCS_URL} class="btn btn-line">
+                {t("cta_docs")}
               </a>
             </div>
           </div>
@@ -46,33 +76,27 @@ export default function Home() {
         </div>
       </section>
 
-      <div class="space-y-8 py-8">
-        <BrandCarousel items={gitHosts} label={t("carousel_hosts_title")} lede={t("carousel_hosts_lede")} />
-        <BrandCarousel
-          items={vcsEngines}
-          label={t("carousel_vcs_title")}
-          lede={t("carousel_vcs_lede")}
-          reverse
-        />
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <CastList items={gitHosts} title={t("carousel_hosts_title")} lede={t("carousel_hosts_lede")} />
+        <CastList items={vcsEngines} title={t("carousel_vcs_title")} lede={t("carousel_vcs_lede")} />
       </div>
 
-      <PageFrame>
-        <section class="grid gap-4 md:grid-cols-3">
-          <For each={layers()}>
-            {(layer) => (
-              <Card>
-                <CardHeader>
-                  <CardTitle>{layer.title}</CardTitle>
-                  <CardDescription>{layer.body}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p class="font-mono text-xs text-muted-foreground">{t("adapter_placeholder")}</p>
-                </CardContent>
-              </Card>
-            )}
-          </For>
-        </section>
-      </PageFrame>
+      <section class="border-t border-border bg-muted/50">
+        <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+          <h2 class="t-h2 mb-10 max-w-xl">{t("layers_title")}</h2>
+          <div class="plates">
+            <For each={layers()}>
+              {(layer) => (
+                <article class="plate">
+                  <h3 class="t-h3">{layer.title}</h3>
+                  <p class="max-w-[52ch] text-muted-foreground">{layer.body}</p>
+                  <p class="plate-status">{t("adapter_placeholder")}</p>
+                </article>
+              )}
+            </For>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

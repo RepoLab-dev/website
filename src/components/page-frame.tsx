@@ -1,8 +1,19 @@
-import type { ParentProps } from "solid-js";
+import type { JSX, ParentProps } from "solid-js";
+import { Show } from "solid-js";
 
-/** Inner page width. Homepage hero stays full-bleed outside this. */
-export function PageFrame(props: ParentProps) {
+/** Inner page: a playbill heading (title + optional lede) over the page body. */
+export function PageFrame(props: ParentProps<{ title?: string; lede?: JSX.Element }>) {
   return (
-    <div class="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8">{props.children}</div>
+    <div class="page">
+      <Show when={props.title}>
+        <header class="page-head">
+          <h1 class="t-h1">{props.title}</h1>
+          <Show when={props.lede}>
+            <p>{props.lede}</p>
+          </Show>
+        </header>
+      </Show>
+      {props.children}
+    </div>
   );
 }

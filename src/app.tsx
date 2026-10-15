@@ -24,7 +24,7 @@ export default function App() {
             <I18nProvider>
               <div class="flex min-h-screen flex-col">
                 <StickyNav />
-                <main class="flex-1">
+                <main id="main" class="flex-1">
                   <Suspense fallback={<LoadingFallback />}>
                     {props.children}
                   </Suspense>

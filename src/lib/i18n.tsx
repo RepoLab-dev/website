@@ -11,6 +11,8 @@ export type Locale = "en" | "es" | "fr";
 
 const dict = {
   en: {
+    mask_pick: "Pick a forge to see it behind the mask",
+    layers_title: "What sits under the mask",
     nav_home: "Home",
     nav_providers: "Providers",
     nav_news: "News",
@@ -25,7 +27,7 @@ const dict = {
     hero_sub:
       "A wrapper and cockpit, not a new version-control engine. Adapters are placeholders until each provider ships.",
     cta_providers: "Browse providers",
-    cta_docs: "Explore the docs »",
+    cta_docs: "Explore the docs",
     layer_hosts_title: "Git hosts",
     layer_hosts_body:
       "GitHub first, then other git hosting APIs behind the same review and browse surfaces.",
@@ -73,7 +75,7 @@ const dict = {
     docs_title: "Docs",
     docs_lede:
       "Teaching and reference live on the org docs hub so this product site is not a second docs site.",
-    docs_cta: "Explore the docs »",
+    docs_cta: "Explore the docs",
     privacy_title: "Privacy",
     privacy_p1:
       "This site is a product landing. Cookie use is limited to theme and language preference storage. No accounts or analytics are wired in this placeholder build.",
@@ -96,6 +98,8 @@ const dict = {
     title_page: "{page} · {site}",
   },
   es: {
+    mask_pick: "Elige una forja para verla detrás de la máscara",
+    layers_title: "Lo que hay bajo la máscara",
     nav_home: "Inicio",
     nav_providers: "Proveedores",
     nav_news: "Noticias",
@@ -110,7 +114,7 @@ const dict = {
     hero_sub:
       "Una capa y un puesto de mando, no un motor nuevo de control de versiones. Los adaptadores son marcadores de posición hasta que cada proveedor esté listo.",
     cta_providers: "Ver proveedores",
-    cta_docs: "Explorar la documentación »",
+    cta_docs: "Explorar la documentación",
     layer_hosts_title: "Anfitriones git",
     layer_hosts_body:
       "GitHub primero, luego otras APIs de hospedaje git detrás de las mismas superficies de revisión y exploración.",
@@ -159,7 +163,7 @@ const dict = {
     docs_title: "Docs",
     docs_lede:
       "La enseñanza y la referencia viven en el hub de documentación de la organización para que este sitio de producto no sea un segundo sitio de docs.",
-    docs_cta: "Explorar la documentación »",
+    docs_cta: "Explorar la documentación",
     privacy_title: "Privacidad",
     privacy_p1:
       "Este sitio es una página de producto. Las cookies se limitan a preferencias de tema e idioma. Esta versión provisional no tiene cuentas ni analítica.",
@@ -183,6 +187,8 @@ const dict = {
     title_page: "{page} · {site}",
   },
   fr: {
+    mask_pick: "Choisir une forge pour la voir derrière le masque",
+    layers_title: "Ce qu’il y a sous le masque",
     nav_home: "Accueil",
     nav_providers: "Fournisseurs",
     nav_news: "Actualités",
@@ -197,7 +203,7 @@ const dict = {
     hero_sub:
       "Une couche et un poste de pilotage, pas un nouveau moteur de gestion de versions. Les adaptateurs restent des placeholders jusqu’à ce que chaque fournisseur soit branché.",
     cta_providers: "Parcourir les fournisseurs",
-    cta_docs: "Explorer la doc »",
+    cta_docs: "Explorer la doc",
     layer_hosts_title: "Hôtes git",
     layer_hosts_body:
       "GitHub d’abord, puis d’autres API d’hébergement git derrière les mêmes surfaces de relecture et de parcours.",
@@ -246,7 +252,7 @@ const dict = {
     docs_title: "Docs",
     docs_lede:
       "L’enseignement et la référence vivent sur le hub de documentation de l’organisation, pour que ce site produit ne soit pas un second site de docs.",
-    docs_cta: "Explorer la doc »",
+    docs_cta: "Explorer la doc",
     privacy_title: "Confidentialité",
     privacy_p1:
       "Ce site est une page produit. Les cookies se limitent au thème et à la langue. Cette version provisoire n’a ni comptes ni analytique.",
