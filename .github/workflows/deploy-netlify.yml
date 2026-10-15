@@ -3,7 +3,7 @@ name: Deploy Netlify
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -44,17 +44,31 @@ jobs:
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
 
+      # Previews: every PR, plus pushes to any branch other than main. Never --prod.
       - name: Deploy preview
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref != 'refs/heads/main')
         id: preview
         run: |
+          if [ "$EVENT" = "pull_request" ]; then
+            alias="pr-$PR_NUMBER"
+          else
+            alias="$(printf '%s' "$BRANCH" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9-]+/-/g; s/^-+//; s/-+$//' | cut -c1-37)"
+          fi
           netlify deploy \
             --dir=dist \
             --functions=.netlify/functions-internal \
-            --alias="pr-${{ github.event.pull_request.number }}" \
+            --alias="$alias" \
+            --message "preview ${{ github.sha }}" \
             --json > deploy.json
-          echo "url=$(node -pe 'JSON.parse(require("fs").readFileSync("deploy.json","utf8")).deploy_url')" >> "$GITHUB_OUTPUT"
+          url="$(node -pe 'JSON.parse(require("fs").readFileSync("deploy.json","utf8")).deploy_url')"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "### Netlify preview" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "$url" >> "$GITHUB_STEP_SUMMARY"
         env:
+          EVENT: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BRANCH: ${{ github.ref_name }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
@@ -89,7 +103,8 @@ jobs:
             }
 
       - name: Deploy production
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        # Production only from main, whatever the trigger.
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
         run: |
           netlify deploy \
             --prod \
